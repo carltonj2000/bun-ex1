@@ -1,6 +1,7 @@
 import { parseArgs } from "util";
 import { getFreePort } from "./getPort";
 import app from "./app";
+import { createBunWebSocket } from "hono/bun";
 
 const { values: args } = parseArgs({
   args: Bun.argv,
@@ -27,10 +28,25 @@ const freePort = (await new Promise((resolve, reject) => {
 
 const port = args.freeport ? freePort : process.env.PORT || 3000;
 
+const { upgradeWebSocket, websocket } = createBunWebSocket();
+
 Bun.serve({
   fetch: app.fetch,
   port,
+  websocket,
 });
+
+app.get(
+  "/ws",
+  upgradeWebSocket((_) => ({
+    onOpen(_, _ws) {
+      // console.log(`WebSocket server opened`);
+    },
+    onClose(_, _ws) {
+      // console.log(`WebSocket server closed'`);
+    },
+  }))
+);
 
 const url = `http://localhost:${port}/test`;
 const start =
