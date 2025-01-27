@@ -13,6 +13,7 @@
   },
   "scripts": {
     "dev": "bun --watch index.ts",
+    "dev:browse": "bun --watch index.ts --browse",
     "build": "bun build ./index.ts --compile --outfile server"
   }
 }
