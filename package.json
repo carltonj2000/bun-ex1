@@ -1,6 +1,6 @@
 {
   "name": "bun-ex1",
-  "module": "index.ts",
+  "module": "./server/index.ts",
   "type": "module",
   "devDependencies": {
     "@types/bun": "latest"
@@ -9,11 +9,13 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "hono": "^4.6.19"
+    "@hono/zod-validator": "^0.4.2",
+    "hono": "^4.6.19",
+    "zod": "^3.24.1"
   },
   "scripts": {
-    "dev": "bun --watch index.ts",
-    "dev:browse": "bun --watch index.ts --browse",
-    "build": "bun build ./index.ts --compile --outfile server"
+    "dev": "bun --watch ./server/index.ts",
+    "dev:browse": "bun --watch ./server/index.ts --browse",
+    "build": "bun build ./server/index.ts --compile --outfile expense"
   }
 }

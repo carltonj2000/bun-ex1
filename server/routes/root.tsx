@@ -3,7 +3,7 @@ import type { FC } from "hono/jsx";
 import { html, raw } from "hono/html";
 
 export const rootRoute = new Hono().get("/", (c) => {
-  return c.html(<Top messages={["hi there 4"]} />);
+  return c.html(<Top messages={["hi there 5"]} />);
 });
 
 const iffe = raw`(() => {

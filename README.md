@@ -1,5 +1,7 @@
 # Bun Example 1
 
+- Use vscode `thunder client` for post requests
+
 # Code History
 
 The code in this repository is based of the following:
@@ -15,4 +17,5 @@ The code in this repository is based of the following:
 mkdir bun-ex1
 cd bun-ex1
 bun init
+bun install zod
 ```

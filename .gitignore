@@ -175,5 +175,5 @@ dist
 .DS_Store
 
 # cj add start
-server
+expense
 # cj add end
