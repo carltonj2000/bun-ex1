@@ -8,7 +8,8 @@ const app = new Hono();
 
 app.use(logger());
 
-app.route("/api/expenses", expenseRoute);
+const apiRoutes = app.basePath("/api").route("/expenses", expenseRoute);
+export type ApiRoutes = typeof apiRoutes;
 
 app.use("*", serveStatic({ root: "./frontend-react/dist" }));
 app.get("*", serveStatic({ path: "./frontend-react/dist/index.html" }));

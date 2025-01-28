@@ -1,5 +1,11 @@
 # Bun Example 1
 
+- run
+
+  - `bun run dev` in the `server` directory
+  - `bun run dev` in the `frontend-directory` directory
+  - open `http://localhost:5173/` in a web browser
+
 - Use vscode `thunder client` for post requests
 
 # Code History

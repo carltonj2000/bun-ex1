@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { api } from "./lib/api";
 
 function App() {
   const [totalSpent, setTotalSpend] = useState(0);
   useEffect(() => {
     const update = async () => {
-      const res = await fetch("/api/expenses/total-spent");
+      const res = await api.expenses.totalSpent.$get();
       const json = await res.json();
       setTotalSpend(json.total);
     };
@@ -17,7 +18,7 @@ function App() {
         <p>The total amount you've spent</p>
       </div>
       <div>
-        <p>{totalSpent}</p>
+        <p>{totalSpent} today</p>
       </div>
     </div>
   );
