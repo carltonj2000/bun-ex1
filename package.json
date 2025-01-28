@@ -18,6 +18,8 @@
     "dev": "bun --watch ./server/index.ts",
     "dev:browse": "bun --watch ./server/index.ts --browse",
     "build": "bun build --target=bun ./server/index.ts --outdir ./build",
-    "compile": "bun build ./server/index.ts --compile --outfile expense"
+    "build:node": "bun build --target=node ./server/index.ts --outdir ./build-node",
+    "compile": "bun build ./server/index.ts --compile --outfile expense",
+    "compile:asset": "bun build --compile ./server/index.ts ./frontend-react/dist/**/* --outfile expense"
   }
 }

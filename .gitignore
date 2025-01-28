@@ -177,4 +177,5 @@ dist
 # cj add start
 expense
 build/
+build-node/
 # cj add end

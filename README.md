@@ -37,6 +37,7 @@ bun install tailwindcss @tailwindcss/postcss postcss
 
 Below tried and failed to use shad/cn because tailwind 4.0 added to
 this project was just released last week and it does not support shad/cn yet.
+As of 1/27/25 skip this until shad/cn supports tailwind 4.0.
 
 ```bash
 bun add class-variance-authority
@@ -44,6 +45,14 @@ bun add clsx
 bun add tailwind-merge
 bun add @radix-ui/react-slot
 # copy code for utils.ts to lib and button.tsx to components/ui
+```
+
+Tan Stack Query
+
+```bash
+cd frontend-react
+bun add @tanstack/react-query
+bun add -D @tanstack/eslint-plugin-query
 ```
 
 # Notes
