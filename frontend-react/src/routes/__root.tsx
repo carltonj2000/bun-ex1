@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Outlet, createRootRoute, Link } from "@tanstack/react-router";
-import { TanStackRouterDevtools } from "@tanstack/router-devtools";
+// import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 
 export const Route = createRootRoute({
   component: RootComponent,
@@ -19,7 +19,7 @@ function RootComponent() {
       </div>
       <hr className="h-px bg-blue-700 border-0" />
       <Outlet />
-      <TanStackRouterDevtools />
+      {/* <TanStackRouterDevtools /> */}
     </React.Fragment>
   );
 }
