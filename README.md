@@ -63,6 +63,14 @@ bun add @tanstack/react-router
 bun add -D @tanstack/router-plugin @tanstack/router-devtools
 ```
 
+Tan Stack Forms
+
+```bash
+cd frontend-react
+bun add @tanstack/react-form
+bun add @tanstack/zod-form-adapter zod
+```
+
 # Notes
 
 ## FLY.io
