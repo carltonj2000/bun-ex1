@@ -23,7 +23,8 @@
     /* cj add */
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@/server": ["../server/*"]
     }
   },
   "include": ["vite.config.ts"]
