@@ -34,6 +34,14 @@ RUN bun run build
 RUN rm -rf node_modules && \
     bun install --ci
 
+# cj add start
+WORKDIR /app/frontend
+COPY bun.lock package-lock.json package.json ./frontend/
+RUN echo $(pwd)
+RUN bun install --ci
+RUN bun run build
+RUN find . -mindepth 1 ! -regex '^./dist\(/.*\)?' -delete
+# cj add end
 
 # Final stage for app image
 FROM base

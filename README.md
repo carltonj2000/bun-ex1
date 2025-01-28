@@ -42,8 +42,18 @@ bun add @radix-ui/react-slot
 
 # Notes
 
+## FLY.io
+
+- `fly auth login`
+- `fly launch`
+  - create a Dockerfile and image for the pwd
+  - start machine on fly.io and provides a url
+- `fly deploy` create a new image and runs it on fly.io
+- `fly apps list|destroy` to list and remove app
+
 ## Docker
 
 | Size  | Details                     |
 | ----- | --------------------------- |
-| 711MB | Initial Fly.io Docker image |
+| 711MB | Fly.io machine fs size      |
+| 187MB | Initial Fly.io Docker image |
