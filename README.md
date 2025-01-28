@@ -39,3 +39,11 @@ bun add tailwind-merge
 bun add @radix-ui/react-slot
 # copy code for utils.ts to lib and button.tsx to components/ui
 ```
+
+# Notes
+
+## Docker
+
+| Size  | Details                     |
+| ----- | --------------------------- |
+| 711MB | Initial Fly.io Docker image |
