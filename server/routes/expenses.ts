@@ -19,7 +19,7 @@ type ExpenseT = z.infer<typeof expenseSchema>;
 
 export const expenseRoute = new Hono()
   .get("/", (c) => {
-    return c.json({ exampleExpenses });
+    return c.json({ expenses: exampleExpenses });
   })
   .post("/", zValidator("json", createPostSchema), async (c) => {
     const expense = await c.req.valid("json");
