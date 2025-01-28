@@ -55,6 +55,14 @@ bun add @tanstack/react-query
 bun add -D @tanstack/eslint-plugin-query
 ```
 
+Tan Stack Router
+
+```bash
+cd frontend-react
+bun add @tanstack/react-router
+bun add -D @tanstack/router-plugin @tanstack/router-devtools
+```
+
 # Notes
 
 ## FLY.io

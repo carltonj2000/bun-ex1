@@ -17,15 +17,6 @@ function App() {
     queryFn: getTotalSpent,
   });
 
-  // const [totalSpent, setTotalSpend] = useState(0);
-  // useEffect(() => {
-  //   const update = async () => {
-  //     const res = await api.expenses.totalSpent.$get();
-  //     const json = await res.json();
-  //     setTotalSpend(json.total);
-  //   };
-  //   update();
-  // }, []);
   if (error) return <p>Error Receiving Total Spent</p>;
   return (
     <div className="w-[350px] m-1 p-2 shadow-md shadow-blue-500 rounded-xl mx-auto">
