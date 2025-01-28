@@ -17,6 +17,7 @@
   "scripts": {
     "dev": "bun --watch ./server/index.ts",
     "dev:browse": "bun --watch ./server/index.ts --browse",
-    "build": "bun build ./server/index.ts --compile --outfile expense"
+    "build": "bun build --target=bun ./server/index.ts --outdir ./build",
+    "compile": "bun build ./server/index.ts --compile --outfile expense"
   }
 }

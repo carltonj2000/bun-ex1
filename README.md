@@ -53,6 +53,11 @@ bun add @radix-ui/react-slot
 
 ## Docker
 
+| Command                         | Details           |
+| ------------------------------- | ----------------- |
+| docker build -t bun-ex1 .       | build the bun-ex1 |
+| docker run -p 3000:3000 bun-ex1 | run docker image  |
+
 | Size  | Details                     |
 | ----- | --------------------------- |
 | 711MB | Fly.io machine fs size      |

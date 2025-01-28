@@ -176,4 +176,5 @@ dist
 
 # cj add start
 expense
+build/
 # cj add end

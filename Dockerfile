@@ -35,8 +35,8 @@ RUN rm -rf node_modules && \
     bun install --ci
 
 # cj add start
-WORKDIR /app/frontend
-COPY bun.lock package-lock.json package.json ./frontend/
+WORKDIR /app/frontend-react
+COPY bun.lock package-lock.json package.json ./frontend-react/
 RUN echo $(pwd)
 RUN bun install --ci
 RUN bun run build
@@ -47,8 +47,9 @@ RUN find . -mindepth 1 ! -regex '^./dist\(/.*\)?' -delete
 FROM base
 
 # Copy built application
-COPY --from=build /app /app
+COPY --from=build /app/build/ /app/build/
+COPY --from=build /app/frontend-react/dist/ /app/frontend-react/dist/
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
-CMD [ "bun", "./server/index.ts" ]
+CMD [ "bun", "./build/index.js" ]
