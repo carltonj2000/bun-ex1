@@ -71,6 +71,13 @@ bun add @tanstack/react-form
 bun add @tanstack/zod-form-adapter zod
 ```
 
+Kinde Docs
+
+```bash
+cd ./ # NOT frontend-react
+bun add @kinde-oss/kinde-typescript-sdk
+```
+
 # Notes
 
 ## FLY.io

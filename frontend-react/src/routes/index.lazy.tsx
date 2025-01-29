@@ -28,11 +28,9 @@ function RouteComponent() {
         <h1 className="text-xl">Total Spent</h1>
         <p>The total amount you've spent</p>
       </div>
-      <div className="flex justify-center pt-3">
-        <p className="text-center">
-          {isPending ? "...retrieving total..." : `$${data.total}`}
-        </p>
-      </div>
+      <p className="text-center">
+        {isPending ? "...retrieving total..." : `$${data.total}`}
+      </p>
     </div>
   );
 }
