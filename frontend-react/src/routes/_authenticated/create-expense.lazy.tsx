@@ -1,26 +1,26 @@
-import { createLazyFileRoute, useNavigate } from "@tanstack/react-router";
-import { useForm } from "@tanstack/react-form";
-import { api } from "../lib/api";
+import { createLazyFileRoute, useNavigate } from '@tanstack/react-router'
+import { useForm } from '@tanstack/react-form'
+import { api } from '../../lib/api'
 
-export const Route = createLazyFileRoute("/create-expense")({
+export const Route = createLazyFileRoute('/_authenticated/create-expense')({
   component: RouteComponent,
-});
+})
 
 function RouteComponent() {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   const form = useForm({
     defaultValues: {
-      title: "",
+      title: '',
       amount: 0,
     },
     onSubmit: async ({ value }) => {
-      const result = await api.expenses.$post({ json: value });
+      const result = await api.expenses.$post({ json: value })
       if (!result.ok) {
-        throw new Error("server error");
+        throw new Error('server error')
       }
-      navigate({ to: "/expenses" });
+      navigate({ to: '/expenses' })
     },
-  });
+  })
 
   return (
     <div className="w-[350px] m-2 p-2 shadow-md shadow-blue-500 rounded-xl mx-auto">
@@ -29,9 +29,9 @@ function RouteComponent() {
       </div>
       <form
         onSubmit={(e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          form.handleSubmit();
+          e.preventDefault()
+          e.stopPropagation()
+          form.handleSubmit()
         }}
         className="flex flex-col justify-center pt-3 gap-2"
       >
@@ -91,11 +91,11 @@ function RouteComponent() {
               disabled={!canSubmit}
               className="shadow-md shadow-blue-300 rounded-xl bg-blue-100"
             >
-              {isSubmitting ? "..." : "Submit"}
+              {isSubmitting ? '...' : 'Submit'}
             </button>
           )}
         />
       </form>
     </div>
-  );
+  )
 }

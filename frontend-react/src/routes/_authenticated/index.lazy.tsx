@@ -1,27 +1,27 @@
-import { createLazyFileRoute } from "@tanstack/react-router";
-import { api } from "../lib/api";
-import { useQuery } from "@tanstack/react-query";
+import { createLazyFileRoute } from '@tanstack/react-router'
+import { api } from '@/lib/api'
+import { useQuery } from '@tanstack/react-query'
 
-export const Route = createLazyFileRoute("/")({
+export const Route = createLazyFileRoute('/_authenticated/')({
   component: RouteComponent,
-});
+})
 
 const getTotalSpent = async () => {
-  const res = await api.expenses.totalSpent.$get();
+  const res = await api.expenses.totalSpent.$get()
   if (!res.ok) {
-    throw new Error("Server Error. Getting total spent.");
+    throw new Error('Server Error. Getting total spent.')
   }
-  const json = await res.json();
-  return json;
-};
+  const json = await res.json()
+  return json
+}
 
 function RouteComponent() {
   const { isPending, error, data } = useQuery({
-    queryKey: ["getTotalSpent"],
+    queryKey: ['getTotalSpent'],
     queryFn: getTotalSpent,
-  });
+  })
 
-  if (error) return <p>Error Receiving Total Spent</p>;
+  if (error) return <p>Error Receiving Total Spent</p>
   return (
     <div className="w-[350px] m-2 p-2 shadow-md shadow-blue-500 rounded-xl mx-auto">
       <div className="border-b-2 border-blue-100 flex flex-col items-center gap-2">
@@ -29,8 +29,8 @@ function RouteComponent() {
         <p>The total amount you've spent</p>
       </div>
       <p className="text-center">
-        {isPending ? "...retrieving total..." : `$${data.total}`}
+        {isPending ? '...retrieving total...' : `$${data.total}`}
       </p>
     </div>
-  );
+  )
 }

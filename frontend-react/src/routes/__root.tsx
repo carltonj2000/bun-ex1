@@ -1,8 +1,17 @@
 import * as React from "react";
-import { Outlet, createRootRoute, Link } from "@tanstack/react-router";
+import {
+  Outlet,
+  Link,
+  createRootRouteWithContext,
+} from "@tanstack/react-router";
+import { type QueryClient } from "@tanstack/react-query";
 // import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 
-export const Route = createRootRoute({
+interface MyRouterContext {
+  queryClient: QueryClient;
+}
+
+export const Route = createRootRouteWithContext<MyRouterContext>()({
   component: RootComponent,
 });
 
@@ -21,6 +30,9 @@ function RootComponent() {
         </Link>{" "}
         <Link to="/about" className="[&.active]:font-bold">
           About
+        </Link>
+        <Link to="/profile" className="[&.active]:font-bold">
+          Profile
         </Link>
       </div>
       <hr className="h-px bg-blue-700 border-0" />

@@ -1,8 +1,8 @@
 import { createLazyFileRoute } from "@tanstack/react-router";
-import { api } from "../lib/api";
+import { api } from "../../lib/api";
 import { useQuery } from "@tanstack/react-query";
 
-export const Route = createLazyFileRoute("/expenses")({
+export const Route = createLazyFileRoute("/_authenticated/expenses")({
   component: RouteComponent,
 });
 
