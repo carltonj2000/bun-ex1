@@ -7,7 +7,6 @@ export const Route = createLazyFileRoute("/_authenticated/expenses")({
 });
 
 const getExpenses = async () => {
-  await new Promise((res) => setTimeout(res, 1000));
   const res = await api.expenses.$get();
   if (!res.ok) {
     throw new Error("Server Error. Getting expenses.");
@@ -33,7 +32,7 @@ function RouteComponent() {
           <p>...retrieving expense...</p>
         ) : (
           <div className="flex flex-col w-full">
-            {data.expenses.map((e) => (
+            {data.map((e) => (
               <div key={e.id} className="flex justify-between">
                 <span>{e.title}</span>
                 <span>${e.amount}</span>

@@ -4,9 +4,18 @@
 
   - `bun run dev` in the root directory
   - `bun run dev` in the `frontend-directory` directory
-  - open `http://localhost:5173/` in a web browser
+  - open `http://localhost:5173/` in a web browser for dev mode
 
 - Use vscode `thunder client` for post requests
+- Use NextJS pg db instead of neon because I already pay for vercel
+
+Drizzle ORM commands.
+
+```bash
+bunx drizzle-kit generate
+bunx drizzle-kit migrate
+bunx drizzle-kit studio
+```
 
 # Code History
 
@@ -76,6 +85,15 @@ Kinde Docs
 ```bash
 cd ./ # NOT frontend-react
 bun add @kinde-oss/kinde-typescript-sdk
+```
+
+Neon Postgres
+
+```bash
+cd ./ # NOT frontend-react
+bun add drizzle-orm @neondatabase/serverless
+bun add -D drizzle-kit
+bun add drizzle-seed
 ```
 
 # Notes
