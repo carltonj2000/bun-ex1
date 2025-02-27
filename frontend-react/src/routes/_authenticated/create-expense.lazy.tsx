@@ -1,6 +1,9 @@
 import { createLazyFileRoute, useNavigate } from "@tanstack/react-router";
 import { useForm } from "@tanstack/react-form";
 import { api } from "../../lib/api";
+import z from "zod";
+
+import { createExpenseSchema } from "../../../../server/sharedTypes";
 
 export const Route = createLazyFileRoute("/_authenticated/create-expense")({
   component: RouteComponent,
@@ -37,6 +40,7 @@ function RouteComponent() {
       >
         <form.Field
           name="title"
+          validators={{ onChange: createExpenseSchema.shape.title }}
           children={(field) => (
             <div>
               <div className="flex justify-between items-center">
@@ -60,6 +64,7 @@ function RouteComponent() {
         />
         <form.Field
           name="amount"
+          validators={{ onChange: createExpenseSchema.shape.amount }}
           children={(field) => (
             <div>
               <div className="flex justify-between items-center">
